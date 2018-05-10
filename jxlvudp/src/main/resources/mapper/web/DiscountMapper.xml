@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.DiscountMapper">
+    <resultMap id="BaseResultMap" type="kesun.entity.web.Discount">
+        <id column="id"  property="id" />
+        <result column="name" property="name" />
+        <result column="integral" property="integral" />
+        <result column="discount" property="discount" />
+        <result column="description" property="description" />
+    </resultMap>
+    <insert id="insert" parameterType="kesun.entity.web.Discount">
+        insert into discount (id, name, integral,
+        discount,description)
+        values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{integral,jdbcType=INTEGER},
+        #{discount,jdbcType=INTEGER},#{description,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="kesun.entity.web.Discount">
+        update discount
+        set name = #{name,jdbcType=VARCHAR},
+        integral = #{integral,jdbcType=INTEGER},
+        discount = #{discount,jdbcType=INTEGER},
+        description = #{description,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from discount
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectForObject" parameterType="java.util.Map"  resultType="java.util.Map">
+        select *
+        from discount where
+        where
+        <trim  suffixOverrides="or">
+            <if test="id!=null">
+                id like '%${id}%' or
+            </if>
+            <if test="name!=null">
+                name like '%${name}%' or
+            </if>
+        </trim>
+        order by name ASC
+    </select>
+
+    <select id="getRowsCount" parameterType="java.util.Map"  resultType="java.lang.Integer">
+        select count(1) as total from discount
+        where
+        <trim  suffixOverrides="or">
+            <if test="id!=null">
+                id like '%${id}%' or
+            </if>
+            <if test="name!=null">
+                name like '%${name}%' or
+            </if>
+        </trim>
+    </select>
+    <select id="findByPage" parameterType="java.util.Map"  resultType="java.util.Map">
+        select *
+        from discount where
+        <trim  suffixOverrides="or">
+            <if test="id!=null">
+                id like '%${id}%' or
+            </if>
+            <if test="name!=null">
+                name like '%${name}%' or
+            </if>
+        </trim>
+
+        order by name ASC
+        <if test="start !=0 or limit!=0">
+            limit #{start},#{limit}
+        </if>
+    </select>
+    <!--判断数据是否在使用中-->
+    <!--<select id="findInUseById" parameterType="java.lang.String" resultType="java.util.Map">-->
+    <!--select id from website where id=#{id,jdbcType=VARCHAR}-->
+    <!--</select>-->
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete from discount
+        where id = #{id,jdbcType=VARCHAR}
+    </delete>
+
+</mapper>

@@ -53,6 +53,8 @@
             <a href="#"><li class="li_bian" id="leaveMessage">留言板管理</li></a>
             <a href="#"><li class="li_bian" id="test">测试管理</li></a>
             <a href="#"><li class="li_bian" id="discount">会员管理</li></a>
+            <a href="#"><li class="li_bian" id="users">顾客管理</li></a>
+
         </div>
         <div title="工作流程管理" style="width:195px;" class="nav_wj">
 
@@ -147,6 +149,10 @@
         });
         $(document).on("click","#discount",function() {
             addTab("会员管理", getRootPath()+"/discount/index");
+        });
+
+        $(document).on("click","#users",function() {
+            addTab("顾客管理", getRootPath()+"/users/index");
         });
         $(document).on("click","#actor",function() {
             addTab("角色管理", getRootPath()+"/actor/index");

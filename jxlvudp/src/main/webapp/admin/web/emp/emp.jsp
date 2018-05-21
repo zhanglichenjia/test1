@@ -11,7 +11,7 @@
 <%@ include file="/header/init_layui.jsp"%>
 <html>
 <head>
-    <title>顾客信息维护</title>
+    <title>员工信息维护</title>
     <script type="text/javascript" charset="utf-8" src="<%=basePath%>/plugins/ueditor/ueditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="<%=basePath%>/plugins/ueditor/ueditor.all.min.js"></script>
     <script type="text/javascript" src="<%=basePath%>/plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
@@ -22,40 +22,15 @@
 <form class="layui-form" id="ff">
     <input type="hidden" name="oldId"/>
     <div class="layui-form-item">
+        <label class="layui-form-label">员工ID：</label>
+        <div class="layui-input-block">
+            <input id="id" name="id" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入员工ID" class="layui-input" type="text" >
+        </div>
+    </div>
+    <div class="layui-form-item">
         <label class="layui-form-label">顾客ID：</label>
         <div class="layui-input-block">
-            <input id="id" name="id" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入顾客id" class="layui-input" type="text" >
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">顾客昵称：</label>
-        <div class="layui-input-block">
-            <input name="name" id="name" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入顾客昵称" class="layui-input" type="text">
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">真实姓名：</label>
-        <div class="layui-input-block">
-            <input name="truename" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入真实姓名" class="layui-input" type="text">
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">密码：</label>
-        <div class="layui-input-block">
-            <input name="password" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入密码" class="layui-input" type="text">
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">折扣：</label>
-        <div class="layui-input-block">
-            <input name="discount" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入折扣" class="layui-input" type="text">
-        </div>
-    </div>
-
-    <div class="layui-form-item">
-        <label class="layui-form-label">积分：</label>
-        <div class="layui-input-block">
-            <input name="integral" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入性别" class="layui-input" type="text">
+            <input id=userId name="userId" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入顾客ID" class="layui-input" type="text" >
         </div>
     </div>
 
@@ -81,7 +56,7 @@
         parent.layer.close(index);
         parent.find(null);
     }
-    var kb=new KBLayUI("users");
+    var kb=new KBLayUI("emp");
     var parentId=getURLParamValue("parentId");
     var type=getURLParamValue("type");//获取操作类型，0表示新增，其他表示修改
     if (parentId!=undefined)
@@ -116,7 +91,7 @@
             if (data!=null && data.obj!=undefined && data.obj!=null)
                 for(var i=0;i<data.obj.length;i++)
                 {
-                    $("#name").append(""+data.obj[i].name+"");
+                    $("#sltWeb").append("<option value='"+data.obj[i].id+"'>"+data.obj[i].name+"</option>");
                 }
             if(type!=0)
                 kb.getMe(getURLParamValue("id"),function (data) {
@@ -133,7 +108,7 @@
                         $("#txtParentID").val("");
                         $("#txtParent").val("");
                     }
-                    $("#sltWeb").find("option[value='"+data.web.id+"']").attr("selected","selected");
+                    $("#users").find("option[value='"+data.web.id+"']").attr("selected","selected");
 
                     layui.use(['form'],function () {
                         var form=layui.form;

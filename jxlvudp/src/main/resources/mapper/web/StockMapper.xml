@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.StockMapper">
+    <resultMap id="BaseResultMap" type="kesun.entity.web.Stock">
+        <id column="id"  property="id" />
+        <result column="name" property="name" />
+        <result column="count" property="count" />
+
+        <association property="product" javaType="kesun.entity.web.Product">
+            <id column="pid"  property="id" />
+            <result column="webName"  property="name" />
+            <result column="description" property="description" />
+        </association>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, name,pid,count,webName,description
+    </sql>
+
+    <insert id="insert" parameterType="kesun.entity.web.Stock">
+        insert into Stock (id, pid, name,
+        count)
+        values (#{id,jdbcType=INTEGER}, #{product.id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+        #{count,jdbcType=INTEGER})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="kesun.entity.web.Stock">
+       update Stock set
+      id=#{id,jdbcType=VARCHAR},pid=#{product.id,jdbcType=VARCHAR},name=#{name,jdbcType=VARCHAR},
+        count=#{count,jdbcType=INTEGER}
+      where id=#{id,jdbcType=VARCHAR}
+    </update>
+
+
+
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from vwStock
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectForObject" parameterType="java.util.Map"  resultType="java.util.Map">
+        select *
+        from Stock where 1=1
+        <trim  suffixOverrides="or">
+            <if test="id!=null">
+                id like '%${id}%' or
+            </if>
+            <if test="name!=null">
+                name like '%${name}%' or
+            </if>
+        </trim>
+        order by name ASC
+    </select>
+
+    <select id="getRowsCount" parameterType="java.util.Map"  resultType="java.lang.Integer">
+        select count(1) as total from Stock
+        where
+        <trim  suffixOverrides="or">
+            <if test="id!=null">
+                id like '%${id}%' or
+            </if>
+            <if test="name!=null">
+                name like '%${name}%' or
+            </if>
+        </trim>
+    </select>
+    <select id="findByPage" parameterType="java.util.Map"  resultType="java.util.Map">
+        select <include refid="Base_Column_List" />
+        from vwStock where
+        <trim  suffixOverrides="or">
+            <if test="id!=null">
+                id like '%${id}%' or
+            </if>
+            <if test="name!=null">
+                name like '%${name}%' or
+            </if>
+        </trim>
+        order by name ASC
+        <if test="start !=0 or limit!=0">
+            limit #{start},#{limit}
+        </if>
+    </select>
+    <!--判断数据是否在使用中-->
+    <!--<select id="findInUseById" parameterType="java.lang.String" resultType="java.util.Map">-->
+    <!--select id from website where id=#{id,jdbcType=VARCHAR}-->
+    <!--</select>-->
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete from Stock
+        where id = #{id,jdbcType=VARCHAR}
+    </delete>
+
+</mapper>

@@ -20,43 +20,36 @@
 <form class="layui-form" id="ff">
     <input type="hidden" name="oldId"/>
     <div class="layui-form-item">
-        <label class="layui-form-label">折扣编号：</label>
+        <label class="layui-form-label">库存编号：</label>
         <div class="layui-input-block">
-            <input id="id" name="id" required style="width:500px;"  lay-verify="required" autocomplete="off" placeholder="请输入折扣的编号" class="layui-input" type="text" >
+            <input id="id" name="id" required style="width:500px;"  lay-verify="required" autocomplete="off" placeholder="请输入库存的编号" class="layui-input" type="text" >
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">折扣名称：</label>
+        <label class="layui-form-label">库存名称：</label>
         <div class="layui-input-block">
-            <input name="name" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入折扣名称" class="layui-input" type="text">
+            <input  name="name" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入库存名称" class="layui-input" type="text">
         </div>
     </div>
     <div class="layui-form-item">
-    <label class="layui-form-label">积分：</label>
+        <label class="layui-form-label">产品名称：</label>
+        <div class="layui-input-block"style="width:500px;">
+            <select name="product.id" id="sltWeb"></select>
+          <%--  <input name="price" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入产品价格" class="layui-input" type="text">--%>
+        </div>
+    </div>
+    <div class="layui-form-item">
+    <label class="layui-form-label">产品数量：</label>
     <div class="layui-input-block"style="width:500px;">
-        <input name="integral" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入积分" class="layui-input" type="text">
+        <input name="count" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入产品数量" class="layui-input" type="text">
     </div>
 </div>
-    <br/>
-    <div class="layui-form-item">
-        <label class="layui-form-label">所享受的折扣： </label>
-        <div class="layui-input-block"style="width:500px;">
-            <input name="discount" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入所享受的折扣，例如100,85等等" class="layui-input" type="text">
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">折扣描述： </label>
-            <div class="layui-input-block"style="width:500px;">
-                <input name="description" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入折扣的相关描述" class="layui-input" type="text">
-            </div>
-    </div>
-    </div>
     <div class="layui-form-item" id="dButton">
         <div class="layui-input-block">
             <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
     </div>
-
 </form>
 <script>
     function closeParent() {
@@ -64,7 +57,7 @@
         parent.layer.close(index);
         parent.find(null);
     }
-    var kb=new KBLayUI("discount");
+    var kb=new KBLayUI("Stock");
     var parentId=getURLParamValue("parentId");
     var type=getURLParamValue("type");//获取操作类型，0表示新增，其他表示修改
     if (parentId!=undefined)
@@ -94,8 +87,8 @@
             });
     });
     $(function () {
-        /*完成站点加载，如果是不是新增，要实现数据选中*/
-        doData("webSite/find",null,function (data) {
+        /!*完成站点加载，如果是不是新增，要实现数据选中*!/
+        doData("product/find",null,function (data) {
             if (data!=null && data.obj!=undefined && data.obj!=null)
                 for(var i=0;i<data.obj.length;i++)
                 {
@@ -116,7 +109,7 @@
                         $("#txtParentID").val("");
                         $("#txtParent").val("");
                     }
-                    $("#sltWeb").find("option[value='"+data.web.id+"']").attr("selected","selected");
+                    $("#sltWeb").find("option[value='"+data.product.id+"']").attr("selected","selected");
 
                     layui.use(['form'],function () {
                         var form=layui.form;
@@ -129,10 +122,6 @@
             });
         });
     });
-
-
-
-
 </script>
 </body>
 </html>

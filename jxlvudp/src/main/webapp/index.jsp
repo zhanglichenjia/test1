@@ -54,10 +54,16 @@
             <a href="#"><li class="li_bian" id="test">测试管理</li></a>
             <a href="#"><li class="li_bian" id="discount">会员管理</li></a>
             <a href="#"><li class="li_bian" id="users">顾客管理</li></a>
-
+            <a href="#"><li class="li_bian" id="emp">员工管理</li></a>
+            <a href="#"><li class="li_bian" id="orders">订单管理</li></a>
         </div>
-        <div title="工作流程管理" style="width:195px;" class="nav_wj">
-
+        <div title="产品管理" style="width:195px;" class="nav_wj">
+            <a href="#"><li class="li_bian" id="product">产品信息管理</li></a>
+            <a href="#"><li class="li_bian" id="Stock">产品库存管理</li></a>
+        </div>
+        <div title="加盟商管理" style="width:195px;" class="nav_wo">
+            <a href="#"><li class="li_bian" id="school">学校管理</li></a>
+            <a href="#"><li class="li_bian" id="Business">加盟商管理</li></a>
         </div>
 
 
@@ -147,12 +153,29 @@
         $(document).on("click","#test",function() {
             addTab("测试管理", getRootPath()+"/test/index");
         });
+        $(document).on("click","#emp",function() {
+            addTab("员工管理", getRootPath()+"/emp/index");
+        });
+        $(document).on("click","#orders",function() {
+            addTab("订单管理", getRootPath()+"/orders/index");
+        });
         $(document).on("click","#discount",function() {
             addTab("会员管理", getRootPath()+"/discount/index");
         });
-
+        $(document).on("click","#product",function() {
+            addTab("产品信息管理", getRootPath()+"/product/index");
+        });
+        $(document).on("click","#Stock",function() {
+            addTab("产品库存管理", getRootPath()+"/Stock/index");
+        });
         $(document).on("click","#users",function() {
             addTab("顾客管理", getRootPath()+"/users/index");
+        });
+        $(document).on("click","#school",function() {
+            addTab("学校管理", getRootPath()+"/school/index");
+        });
+        $(document).on("click","#Business",function() {
+            addTab("加盟商管理", getRootPath()+"/Business/index");
         });
         $(document).on("click","#actor",function() {
             addTab("角色管理", getRootPath()+"/actor/index");

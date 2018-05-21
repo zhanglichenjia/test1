@@ -34,23 +34,20 @@
         </button>
     </div>
 </div>
-<table class="easyui-datagrid" title="会员管理" style="height:auto" id="dgDiscount"
+<table class="easyui-datagrid" title="学校管理" style="height:auto" id="dgSchool"
        data-options="rownumbers:true,pagination:true,collapsible:true,striped:true,fit:true,toolbar:'#tb'">
     <thead>
     <tr>
         <th data-options="field:'id1',checkbox:true"></th>
-        <th data-options="field:'id',width:80">编号</th>
-        <th data-options="field:'name',width:100">折扣名称</th>
-        <th data-options="field:'integral',width:80">积分</th>
-        <th data-options="field:'discount',width:80">所享受的折扣</th>
-        <th data-options="field:'description',width:100">折扣描述</th>
+        <th data-options="field:'id',width:80">学校id</th>
+        <th data-options="field:'name',width:120">学校名称</th>
+        <th data-options="field:'description',width:120">学校描述</th>
         <th data-options="field:'ids',formatter:jxmstc.formateOperateForEasyui" width="120"
             align="center">操作</th>
     </tr>
     </thead>
 </table>
-
-<script src="<%=basePath%>/script/business/web/discountManage.js"></script>
+<script src="<%=basePath%>/script/business/web/schoolManage.js"></script>
 
 
 

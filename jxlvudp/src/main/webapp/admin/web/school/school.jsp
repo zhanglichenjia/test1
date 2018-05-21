@@ -20,43 +20,30 @@
 <form class="layui-form" id="ff">
     <input type="hidden" name="oldId"/>
     <div class="layui-form-item">
-        <label class="layui-form-label">折扣编号：</label>
+        <label class="layui-form-label">学校编号：</label>
         <div class="layui-input-block">
-            <input id="id" name="id" required style="width:500px;"  lay-verify="required" autocomplete="off" placeholder="请输入折扣的编号" class="layui-input" type="text" >
+            <input id="id" name="id" required style="width:500px;"  lay-verify="required" autocomplete="off" placeholder="请输入学校的编号" class="layui-input" type="text" >
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">折扣名称：</label>
+        <label class="layui-form-label">学校名称：</label>
         <div class="layui-input-block">
-            <input name="name" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入折扣名称" class="layui-input" type="text">
+            <input name="name" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入学校名称" class="layui-input" type="text">
         </div>
     </div>
     <div class="layui-form-item">
-    <label class="layui-form-label">积分：</label>
+    <label class="layui-form-label">学校相关描述：</label>
     <div class="layui-input-block"style="width:500px;">
-        <input name="integral" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入积分" class="layui-input" type="text">
+        <input name="description" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入学校的相关描述" class="layui-input" type="text">
     </div>
 </div>
     <br/>
-    <div class="layui-form-item">
-        <label class="layui-form-label">所享受的折扣： </label>
-        <div class="layui-input-block"style="width:500px;">
-            <input name="discount" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入所享受的折扣，例如100,85等等" class="layui-input" type="text">
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">折扣描述： </label>
-            <div class="layui-input-block"style="width:500px;">
-                <input name="description" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入折扣的相关描述" class="layui-input" type="text">
-            </div>
-    </div>
-    </div>
     <div class="layui-form-item" id="dButton">
         <div class="layui-input-block">
             <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
     </div>
-
 </form>
 <script>
     function closeParent() {
@@ -64,7 +51,7 @@
         parent.layer.close(index);
         parent.find(null);
     }
-    var kb=new KBLayUI("discount");
+    var kb=new KBLayUI("school");
     var parentId=getURLParamValue("parentId");
     var type=getURLParamValue("type");//获取操作类型，0表示新增，其他表示修改
     if (parentId!=undefined)

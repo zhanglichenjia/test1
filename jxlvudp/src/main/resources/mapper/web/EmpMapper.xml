@@ -3,16 +3,15 @@
 <mapper namespace="mapper.EmpMapper">
     <resultMap id="BaseResultMap" type="kesun.entity.web.Emp">
         <id column="id"  property="id" />
-        <id column="userId" property="userId"/>
+        <result column="userId" property="userId" />
         <association property="users" javaType="kesun.entity.web.Users">
-            <id column="userId" property="id"/>
+            <id column="id" property="id"/>
             <result column="name" property="name" />
 			<result column="truename" property="truename" />
             <result column="password" property="password" />
             <result column="discount" property="discount" />
             <result column="integral" property="integral" />			
         </association>
-
     </resultMap>
     <insert id="insert" parameterType="kesun.entity.web.Emp">
         insert into emp (id, userId)
@@ -24,14 +23,14 @@
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
-        from vwemp
+        from viewEmp
         where id = #{id,jdbcType=VARCHAR}
 
     </select>
 
     <select id="selectForObject" parameterType="java.util.Map"  resultType="java.util.Map">
         select *
-        from vwemp
+        from viewEmp
         where
         <trim  suffixOverrides="or">
             <if test="id!=null">
@@ -46,7 +45,7 @@
 
     <select id="selectForMap" parameterType="java.util.Map"  resultType="java.util.Map">
         select <include refid="Base_Column_List" />
-        from vwemp
+        from viewEmp
         <where>
             <if test='parent!=null and parent!="" and parent!="0"'>
                 parent=#{parent,jdbcType=VARCHAR} AND
@@ -57,12 +56,12 @@
     </select>
 
     <select id="getRowsCount" parameterType="java.util.Map"  resultType="java.lang.Integer">
-        select count(1) as total from vwemp where name like '%${name}%' or id like '%${id}%'
+        select count(1) as total from viewEmp where name like '%${name}%' or id like '%${id}%'
     </select>
     <!--分页查询-->
     <select id="findByPage" parameterType="java.util.Map"  resultType="java.util.Map">
         select <include refid="Base_Column_List" />
-        from vwemp where
+        from viewEmp where
         <trim  suffixOverrides="or">
             <if test="id!=null">
                 id like '%${id}%' or

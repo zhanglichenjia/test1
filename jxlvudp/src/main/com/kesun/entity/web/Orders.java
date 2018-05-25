@@ -13,7 +13,7 @@ public class Orders  extends AbsBusinessObject {
     private String uid;
     private String name;
     private float sumPrice;
-    private Date dataTime = new Date();
+    private Date dataTime;
     private int statuse;  //与数据库中的status 一致
     private String address;
     private Users users;

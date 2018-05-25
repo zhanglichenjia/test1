@@ -6,10 +6,10 @@
 %>
 <html>
 <head>
-    <title>江西联微软件技术有限公司统一开发平台</title>
+    <title>校    园    水    果    后    台   管   理   系   统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <link href="<%= basePath %>/plugins/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="<%= basePath %>/plugins/easyui/themes/ui-cupertino/easyui.css" rel="stylesheet" />
     <link href="<%= basePath %>/plugins/easyui/themes/icon.css" rel="stylesheet" />
 
     <link href="<%= basePath %>/css/project.css" rel="stylesheet" />

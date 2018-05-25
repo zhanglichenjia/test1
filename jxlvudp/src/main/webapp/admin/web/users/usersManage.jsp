@@ -41,12 +41,12 @@
     <thead>
     <tr>
         <th data-options="field:'id1',checkbox:true"></th>
-        <th data-options="field:'id',width:80">顾客ID</th>
-        <th data-options="field:'name',width:180">顾客名称</th>
-        <th data-options="field:'truename',width:180">真实姓名</th>
-        <th data-options="field:'password',width:200">密码</th>
-        <th data-options="field:'discount',width:60">折扣</th>
-        <th data-options="field:'integral',width:60">积分</th>
+        <th data-options="field:'id',width:60">顾客ID</th>
+        <th data-options="field:'name',width:100">顾客名称</th>
+        <th data-options="field:'truename',width:100">真实姓名</th>
+        <th data-options="field:'password',width:100">密码</th>
+        <th data-options="field:'discount',width:80">折扣</th>
+        <th data-options="field:'integral',width:80">积分</th>
         <th data-options="field:'ids',formatter:jxmstc.formateOperateForEasyui" width="120"
             align="center">操作</th>
     </tr>

@@ -82,7 +82,7 @@
 </head>
 <body>
 <div class="larry-main layui-layout animated shake larry-delay2" id="larry_login" style="margin-top: 94px;">
-	<div class="title">江西联微软件统一开发平台</div>
+	<div class="title">校园水果后台登录</div>
 	<p class="info">后台登录中心</p>
 	<div class="user-info">
 		<div class="avatar"><img src="images/admin.png" alt=""></div>
@@ -107,7 +107,7 @@
 			 </div>
 		</form>
 	</div>
-	<div class="copy-right"><span style="color:white">&copy;2017 江西联微软件技术有限公司</span></div>
+	<div class="copy-right"><span style="color:white">&copy;2018 水果先生</span></div>
 </div>
 <div class="layui-layer-move"></div>
 	<ul id="supersized" class="quality" style="visibility: visible;">

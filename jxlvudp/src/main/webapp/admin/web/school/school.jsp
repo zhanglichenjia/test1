@@ -37,6 +37,13 @@
         <input name="description" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入学校的相关描述" class="layui-input" type="text">
     </div>
 </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">状态:</label>
+        <div class="layui-input-block">
+            <input name="status" value="正常" title="正常" checked="checked" type="radio">
+            <input name="status" value="关闭" title="关闭" type="radio">
+        </div>
+    </div>
     <br/>
     <div class="layui-form-item" id="dButton">
         <div class="layui-input-block">

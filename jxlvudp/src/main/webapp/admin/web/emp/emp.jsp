@@ -30,7 +30,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">顾客ID：</label>
         <div class="layui-input-block">
-            <input id=userId name="userId" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入顾客ID" class="layui-input" type="text" >
+            <input  name="userId" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入顾客ID" class="layui-input" type="text" >
         </div>
     </div>
 

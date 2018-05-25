@@ -12,8 +12,8 @@ public class Orders  extends AbsBusinessObject {
     private String id;
     private String uid;
     private String name;
-    private BigDecimal sumPrice;
-    private Date dataTime;
+    private float sumPrice;
+    private Date dataTime = new Date();
     private int statuse;  //与数据库中的status 一致
     private String address;
     private Users users;
@@ -46,11 +46,11 @@ public class Orders  extends AbsBusinessObject {
         this.name = name;
     }
 
-    public BigDecimal getSumPrice() {
+    public float getSumPrice() {
         return sumPrice;
     }
 
-    public void setSumPrice(BigDecimal sumPrice) {
+    public void setSumPrice(float sumPrice) {
         this.sumPrice = sumPrice;
     }
 

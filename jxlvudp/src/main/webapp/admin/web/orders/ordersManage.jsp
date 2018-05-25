@@ -41,13 +41,13 @@
     <tr>
         <th data-options="field:'id1',checkbox:true"></th>
         <th data-options="field:'id',width:80">订单号</th>
-        <th data-options="field:'name',width:150">订单编号</th>
+        <th data-options="field:'name',width:120">订单编号</th>
         <th data-options="field:'uid',width:80">顾客id</th>
         <th data-options="field:'truename',width:130">顾客名称</th>
         <th data-options="field:'dataTime',width:130,formatter: formatDatebox">生成时间</th>
-        <th data-options="field:'sumPrice',width:130">总价</th>
+        <th data-options="field:'sumPrice',width:100">总价</th>
         <th data-options="field:'statuse',width:80">下单状态</th>
-        <th data-options="field:'address',width:180">配送地址</th>
+        <th data-options="field:'address',width:120">配送地址</th>
         <th data-options="field:'ids',formatter:jxmstc.formateOperateForEasyui" width="120"
             align="center">操作</th>
     </tr>

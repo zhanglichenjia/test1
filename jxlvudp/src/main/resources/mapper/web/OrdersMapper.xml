@@ -19,7 +19,7 @@
     <update id="updateByPrimaryKey" parameterType="kesun.entity.web.Orders">
         update orders set
         name = #{name,jdbcType=VARCHAR},
-        sumPrice = #{sumPrice,jdbcType=NUMERIC},
+        sumPrice = #{sumPrice,jdbcType=FLOAT},
         dataTime = #{dataTime,jdbcType=TIMESTAMP},
         statuse = #{statuse,jdbcType=INTEGER},
         address = #{address,jdbcType=VARCHAR},
@@ -29,7 +29,7 @@
     <insert id="insert" parameterType="kesun.entity.web.Orders">
         insert into orders (id, uid,name,sumPrice,dataTime,statuse,address)
         values (#{id,jdbcType=VARCHAR},#{users.id,jdbcType=VARCHAR},
-         #{name,jdbcType=VARCHAR},#{sumPrice,jdbcType=NUMERIC}, #{dataTime,jdbcType=TIMESTAMP},
+         #{name,jdbcType=VARCHAR},#{sumPrice,jdbcType=FLOAT}, #{dataTime,jdbcType=TIMESTAMP},
           #{statuse,jdbcType=INTEGER},#{address,jdbcType=VARCHAR})
     </insert>
 
@@ -46,7 +46,7 @@
     <select id="selectForObject" parameterType="java.util.Map"  resultType="java.util.Map">
         select *
         from viewOrders
-        where
+        where 1= 1
         <trim  suffixOverrides="or">
             <if test="id!=null">
                 id like '%${id}%' or
@@ -55,7 +55,7 @@
                 name like '%${name}%' or
             </if>
         </trim>
-        order by name ASC
+        order by id ASC
     </select>
 
     <select id="selectForMap" parameterType="java.util.Map"  resultType="java.util.Map">

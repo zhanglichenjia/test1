@@ -5,20 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>江西联微软件技术有限公司统一开发平台</title>
+    <title>校园水果后台管理系统</title>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/index.css">
 </head>
 <body class="easyui-layout">
 <!--rgb(47,64,86)藏青色-->
 <div data-options="region:'north',border:false"
-     style="height:60px; line-height:60px; overflow:hidden;background-color:rgb(0,129,194);padding-left: 10px;padding-right: 10px;">
+     style="height:60px; line-height:60px; overflow:hidden;background-color: #d7ebf9;padding-left: 10px;padding-right: 10px;">
     <!--<iframe src="top.jsp" width="100%" height="99%;" frameborder="0"> </iframe> -->
-    <span style="color:white;font-size: 25px;">江西联微软件技术有限公司统一开发平台</span>
+    <span style="color:#2678ab;font-size: 30px;margin-left: 400px">校    园    水    果    后    台   管   理   系   统</span>
     <!-- 顶部状态栏-->
-    <div style="float:right; text-align:right; color:white">
-        <span id="sUser" style="color:white">欢迎【admin】访问系统</span>&nbsp;&nbsp;
-        <a href="#" class="eayui-linkbutton" id="aUser" title="点此修改密码"><span style="color:white;">密码修改</span></a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:void(0)" class="eayui-linkbutton" id="btnLogout"><span style="color:white;">退出系统</span></a>
+    <div style="float:right; text-align:right; color:#2678ab">
+        <span id="sUser" style="color:#2678ab">欢迎【admin】访问系统</span>&nbsp;&nbsp;
+        <a href="#" class="eayui-linkbutton" id="aUser" title="点此修改密码"><span style="color:#2678ab;">密码修改</span></a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:void(0)" class="eayui-linkbutton" id="btnLogout"><span style="color:#2678ab;">退出系统</span></a>
 
     </div>
 </div>
@@ -28,23 +28,24 @@
      style="width:200px;padding:1px;" id="dMenu">
     <div id="dMyMenu" class="easyui-accordion"  style="width:196px;">
         <div title="辅助系统" style="width:195px;" class="nav_fl">
-            <a href="#"><li class="li_bian" id="dictionary">数据词典管理</li></a>
+           <%-- <a href="#"><li class="li_bian" id="dictionary">数据词典管理</li></a>--%>
             <shiro:hasPermission name="/actorType/actorType">
                 <a href="#"><li class="li_bian" id="actorType">角色类型管理</li></a>
             </shiro:hasPermission>
             <a href="#"><li class="li_bian"  id="actor">角色管理</li></a>
             <a href="#"><li class="li_bian" id="user">用户管理</li></a>
-            <a href="#"><li class="li_bian" id="userOnline">用户在线管理</li></a>
             <a href="#"><li class="li_bian" id="systemMenu">系统菜单管理</li></a>
+
+           <%-- <a href="#"><li class="li_bian" id="userOnline">用户在线管理</li></a>
             <a href="#"><li class="li_bian" id="organization">组织机构管理</li></a>
             <a href="#"><li class="li_bian" id="clerk">员工管理</li></a>
-            <a href="text1.html" target="content"><li class="li_bian">数据管理</li></a>
+            <a href="text1.html" target="content"><li class="li_bian">数据管理</li></a>--%>
 
         </div>
-        <div title="通用网站后台" style="width:195px;" class="nav_gw">
-            <a href="#"><li class="li_bian" id="website" >子网站或频道管理</li></a>
-            <a href="#"><li class="li_bian" id="newsCategory" >新闻分类管理</li></a>
-            <a href="#"><li class="li_bian" id="notice" >通知管理</li></a>
+        <%--<div title="通用网站后台" style="width:195px;" class="nav_gw" >
+            <a href="#"><li class="li_bian" id="website" hidden="hidden">子网站或频道管理</li></a>
+            <a href="#"><li class="li_bian" id="newsCategory" hidden="hidden">新闻分类管理</li></a>
+            <a href="#"><li class="li_bian" id="notice" hidden="hidden">通知管理</li></a>
             <a href="#"><li class="li_bian" id="annoucement">公告管理</li></a>
             <a href="#"><li class="li_bian" id="news" >新闻管理</li></a>
             <a href="#"><li class="li_bian" id="newsCheck" >新闻审核管理</li></a>
@@ -52,26 +53,31 @@
             <a href="#"><li class="li_bian" id="leaveMSG">留言板留言</li></a>
             <a href="#"><li class="li_bian" id="leaveMessage">留言板管理</li></a>
             <a href="#"><li class="li_bian" id="test">测试管理</li></a>
-            <a href="#"><li class="li_bian" id="discount">会员管理</li></a>
-            <a href="#"><li class="li_bian" id="users">顾客管理</li></a>
-            <a href="#"><li class="li_bian" id="emp">员工管理</li></a>
-            <a href="#"><li class="li_bian" id="orders">订单管理</li></a>
-        </div>
+        </div>--%>
         <div title="产品管理" style="width:195px;" class="nav_wj">
             <a href="#"><li class="li_bian" id="product">产品信息管理</li></a>
             <a href="#"><li class="li_bian" id="Stock">产品库存管理</li></a>
+        </div>
+        <div title="员工及顾客管理" style="width:195px;" class="nav_wj">
+            <a href="#"><li class="li_bian" id="users">顾客管理</li></a>
+            <a href="#"><li class="li_bian" id="emp">员工管理</li></a>
+        </div>
+        <div title="订单管理" style="width:195px;" class="nav_wp">
+            <a href="#"><li class="li_bian" id="orders">订单管理</li></a>
+            <a href="#"><li class="li_bian" id="buyProduct">购买产品管理</li></a>
         </div>
         <div title="加盟商管理" style="width:195px;" class="nav_wo">
             <a href="#"><li class="li_bian" id="school">学校管理</li></a>
             <a href="#"><li class="li_bian" id="Business">加盟商管理</li></a>
         </div>
-
-
+        <div title="会员管理" style="width:195px;" class="nav_wo">
+            <a href="#"><li class="li_bian" id="discount">会员管理</li></a>
+        </div>
     </div>
 </div>
 
 
-<div data-options="region:'south',border:false,height:30" style="padding:6px 0;text-align: center;color:white;background-color:rgb(0,129,194)">
+<div data-options="region:'south',border:false,height:30" style="padding:6px 0;text-align: center;color:#2678ab;background-color:#d7ebf9">
     Copy Right &copy 2017 江西联微软件技术有限公司 版权所有 </div>
 <div data-options="region:'center'" style="z-index:-1;">
     <div class="easyui-tabs" id="tWork"
@@ -93,21 +99,21 @@
                 <td>请输入原密码：</td>
                 <td><input class="easyui-textbox" style="height:30px;"
                            name="password" type="password" id="txtprepassword"
-                           data-options="required:true,validType:'length[6,20]'"></input>
+                           data-options="required:true,validType:'length[6,20]'">
                 </td>
             </tr>
             <tr>
                 <td>请输入新密码：</td>
                 <td><input class="easyui-textbox" style="height:30px;"
                            name="password" type="password" id="txtnewpassword"
-                           data-options="required:true,validType:'length[6,20]'"></input>
+                           data-options="required:true,validType:'length[6,20]'">
                 </td>
             </tr>
             <tr>
                 <td>请再次输入新密码：</td>
                 <td><input class="easyui-textbox" style="height:30px;"
                            name="password" type="password" id="txtconfirmpassword"
-                           data-options="required:true,validType:'length[6,20]'"></input>
+                           data-options="required:true,validType:'length[6,20]'">
                 </td>
             </tr>
         </table>
@@ -161,6 +167,9 @@
         });
         $(document).on("click","#discount",function() {
             addTab("会员管理", getRootPath()+"/discount/index");
+        });
+        $(document).on("click","#buyProduct",function() {
+            addTab("购买产品管理", getRootPath()+"/buyProduct/index");
         });
         $(document).on("click","#product",function() {
             addTab("产品信息管理", getRootPath()+"/product/index");

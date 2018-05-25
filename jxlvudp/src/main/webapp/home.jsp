@@ -16,71 +16,73 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="jumbotron">
+            <div class="jumbotron" style="background:#d7ebf9">
                 <div class="page-header">
-                    <h3>江西联微软件技术有限公司统一开发平台<small>Beta V1.0.0.0</small></h3>
+                    <h3>校园水果后台管理系统<small>Beta V1.0.0.0</small></h3>
                 </div>
                 <p>
-                    江西联微软件技术有限公司统一开发平台集成了Spring MVC、Spring IOC、Mybatis、Shiro和Redis等
-                    框架技术，采用了Maven进行jar包统一管理，实现了Shiro+Redis进行用户安全及权限管理，实现了用户
-                    的单点登录功能，Web前端提供了EasyUI、LayUI和BootStrap框架，采用了Ajax数据交换技术......
+                    水果，这种大众消费品已逐渐转变为生活必需品，是大众日常消费的一个重要组成部分。随着我们学校的不断发展，我们学生的规模越来越大。庞大的学生数量必然带来庞大的水果需求。
+                    经我的调查很多同学在家都有经常吃水果的习惯，他们在校也很有这方面的欲望，因此校园水果必然是一种很好的发展方向。
                 </p>
                 <p><a class="btn btn-primary btn-lg" href="#" role="button">了解更多</a></p>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" >
             <div class="thumbnail">
-                <img src="<%=basePath%>/images/business.png" width="150" height="150" alt="...">
-                <div class="caption">
-                    <h3>专注业务</h3>
-                    <h5>Focus On Business</h5>
-                    <p>系统管理涉及的内容较多，特别是系统的权限与安全管理尤为重要，这往往需要花费开发者大量的时间，
-                    统一开发平台已经将系统管理方面的功能全部开发完毕，包括角色管理、用户管理、角色授权、权限使用、组织机构管理、
-                    ......等；开发者只要专注客户的业务系统。</p>
+                <img src="<%=basePath%>/images/guochan.png" width="150" height="150" alt="...">
+                <div class="caption" >
+                    <h3>国产水果</h3>
+                    <h5>Domestic Fruits</h5>
+                    <p>随着南方逐渐纳入中国文化圈，许多原产于南方的水果也渐渐被食用。
+                        其中包括了橘、柚、柑、橙、荔枝、龙眼、林檎（又称花红）、枇杷、杨梅、橄榄。
+                    </p>
                     <p><a href="#" class="btn btn-primary" role="button">详情</a></p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="thumbnail">
-                <img src="<%=basePath%>/images/code.png" width="150" height="150" alt="...">
+                <img src="<%=basePath%>/images/jinkou.png" width="150" height="150" alt="...">
                 <div class="caption">
-                    <h3>代码复用</h3>
-                    <h5>Code Reuse</h5>
-                    <p>平台提倡代码复用机制，在类的设计中，尽可能的考虑到代码的重复性问题，采用了大量的继承机制实现代码复用；在封装
-                    代码的过程中充分考虑到功能个性需求，提供了大量开放的接口，可以继承，也可以重写或重载这些功能；让开发者用
-                    极少的代码完成更多的功能，享受开发的快乐</p>
-                    <p><a href="#" class="btn btn-primary" role="button">详情</a></p>
+                    <h3>进口水果</h3>
+                    <h5>Imported fruit</h5>
+                    <p>进口水果比较贵，因为有关税在里面；包装一般比较精致；
+                        一般都是绿色的，农药化肥等一般都不会超标；
+                        很多进口水果是国内没有的；不同的水果可能在大小、外观等方面可能都超过国产的。</p>
+                    <p><a href="#" class="btn btn-primary" role="button">详细</a></p>
                 </div>
             </div>
         </div>
+
     </div>
     <div class="row">
         <div class="col-md-6">
             <div class="thumbnail">
-                <img src="<%=basePath%>/images/power.png" width="150" height="150" alt="...">
+                <img src="<%=basePath%>/images/shengxian.png" width="150" height="150" alt="...">
                 <div class="caption">
-                    <h3>权限管理</h3>
-                    <h5>Power Management</h5>
-                    <p>统一平台在解决系统功能权限管理时采用了Shiro框架，将系统中每个原子操作都通过授权的形式进行统一的管理
-                    ；另外，平台还提供了数据权限开放接口。</p>
+                    <h3>生鲜水果</h3>
+                    <h5>Fresh fruit</h5>
+                    <p>生鲜农产品主要包括蔬菜、水果、花卉、肉、蛋、奶以及水产品等我们日常生活中必不可少的生活必需品。
+                        我们习惯将其称为“生鲜三品”，即果蔬、肉类和水产。</p>
                     <p><a href="#" class="btn btn-primary" role="button">详细</a></p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="thumbnail">
-                <img src="<%=basePath%>/images/security.png" width="150" height="150" alt="...">
+                <img src="<%=basePath%>/images/redai.png" width="150" height="150" alt="...">
                 <div class="caption">
-                    <h3>安全管理</h3>
-                    <h5>Security Management</h5>
-                    <p>在安全管理方面，平台采用了Redis+Shiro的方式实现，实现了单点登录、用户在线监控、密码采用了Shiro盐值方式加密</p>
-                    <p><a href="#" class="btn btn-primary" role="button">详细</a></p>
+                    <h3>热带水果</h3>
+                    <h5>Tropical fruits</h5>
+                    <p>典型的热带水果有：菠萝、香蕉、芒果、火龙果、龙眼、荔枝、榴莲、莲雾、柚子、金心果、尖蜜拉、椰子、
+                        夏威夷果、蛋黄果、油梨、红毛丹、番荔枝、西番莲、柠檬等等</p>
+                    <p><a href="#" class="btn btn-primary" role="button">详情</a></p>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 </body>

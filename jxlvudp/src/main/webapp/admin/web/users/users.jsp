@@ -55,7 +55,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">积分：</label>
         <div class="layui-input-block">
-            <input name="integral" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入性别" class="layui-input" type="text">
+            <input name="integral" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入积分" class="layui-input" type="text">
         </div>
     </div>
 

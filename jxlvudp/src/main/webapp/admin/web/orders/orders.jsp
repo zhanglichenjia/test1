@@ -32,13 +32,13 @@
             <input name="name" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入订单编号" class="layui-input" type="text">
         </div>
     </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">顾客ID：</label>
-        <div class="layui-input-block"style="width:500px;">
-            <input name="uid" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入顾客id" class="layui-input" type="text">
-        </div>
-    </div>
-    <br/>
+    <%--<div class="layui-form-item">--%>
+        <%--<label class="layui-form-label">顾客ID：</label>--%>
+        <%--<div class="layui-input-block"style="width:500px;">--%>
+            <%--<input name="uid" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入顾客id" class="layui-input" type="text">--%>
+        <%--</div>--%>
+    <%--</div>--%>
+    <%--<br/>--%>
     <div class="layui-form-item">
         <label class="layui-form-label">顾客名称：</label>
         <div class="layui-input-block"style="width:500px;">

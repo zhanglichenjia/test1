@@ -20,15 +20,15 @@
 </head>
 <body>
 <div class="layui-table-tool" id="tb">
-    <button class="layui-btn layui-btn-small" id="btnAdd" >
+    <%-- <button class="layui-btn layui-btn-small" id="btnAdd" >
         <i class="layui-icon">&#xe608;</i> 添加
-    </button>
+    </button>--%>
     <input type="text"  style="width: 300px; height: 28px;" name="name" id="txtName" required  placeholder="请输入关键词" autocomplete="off"/>
     <div class="layui-btn-group">
         <button class="layui-btn layui-btn-small" id="btnFind">
-            <i class="layui-icon">&#xe615;</i> 搜索
-        </button>
-        <%--<button class="layui-btn layui-btn-small layui-btn-normal" id="btnFresh">--%>
+             <i class="layui-icon">&#xe615;</i> 搜索
+         </button>
+         <%--<button class="layui-btn layui-btn-small layui-btn-normal" id="btnFresh">--%>
         <%--<i class="layui-icon">&#x1002;</i> 刷新--%>
         <%--</button>--%>
         <button class="layui-btn layui-btn-small layui-btn-warm" id="btnDeleteAll">

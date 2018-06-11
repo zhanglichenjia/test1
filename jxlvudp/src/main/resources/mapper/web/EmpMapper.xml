@@ -5,7 +5,7 @@
         <id column="id"  property="id" />
         <result column="userId" property="userId" />
         <association property="users" javaType="kesun.entity.web.Users">
-            <id column="id" property="id"/>
+            <id column="usersid" property="id"/>
             <result column="name" property="name" />
 			<result column="truename" property="truename" />
             <result column="password" property="password" />
@@ -13,12 +13,17 @@
             <result column="integral" property="integral" />			
         </association>
     </resultMap>
+    <update id="updateByPrimaryKey" parameterType="kesun.entity.web.Emp">
+        update emp
+        set userId = #{users.id,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
     <insert id="insert" parameterType="kesun.entity.web.Emp">
         insert into emp (id, userId)
-        values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR})
+        values (#{id,jdbcType=VARCHAR}, #{users.id,jdbcType=VARCHAR})
     </insert>
 	<sql id="Base_Column_List">
-        id,userId,name,truename,password,discount,integral
+        id,userId,usersid,name,truename,password,discount,integral
     </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
@@ -84,5 +89,4 @@
         delete from emp
         where id = #{id,jdbcType=VARCHAR}
     </delete>
-
 </mapper>

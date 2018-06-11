@@ -10,7 +10,7 @@
         <result column="statuse" property="statuse"/>
         <result column="address" property="address"/>
         <association property="users" javaType="kesun.entity.web.Users">
-            <id column="id" property="id"/>
+            <id column="usersid" property="id"/>
 			<result column="truename" property="truename" />
         </association>
 
@@ -34,7 +34,7 @@
     </insert>
 
 	<sql id="Base_Column_List">
-        id,uid,name,sumPrice,dataTime,statuse,address,truename
+        id,uid,usersid,name,sumPrice,dataTime,statuse,address,truename
     </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select

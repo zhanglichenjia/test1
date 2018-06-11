@@ -42,7 +42,7 @@
     <tr>
         <th data-options="field:'id1',checkbox:true"></th>
         <th data-options="field:'id',width:80">员工ID</th>
-        <th data-options="field:'userId',width:80">顾客对应ID</th>
+        <%--<th data-options="field:'userId',width:80">顾客对应ID</th>--%>
         <th data-options="field:'name',width:100">员工昵称</th>
         <th data-options="field:'truename',width:100">员工名称</th>
 		<th data-options="field:'password',width:100">员工密码</th>

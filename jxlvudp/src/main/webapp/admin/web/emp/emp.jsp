@@ -28,9 +28,9 @@
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">顾客ID：</label>
-        <div class="layui-input-block">
-            <input  name="userId" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入顾客ID" class="layui-input" type="text" >
+        <label class="layui-form-label">顾客名称：</label>
+        <div class="layui-input-block"style="width:500px;">
+            <select name="users.id" id="sltUsers"></select>
         </div>
     </div>
 
@@ -91,7 +91,7 @@
             if (data!=null && data.obj!=undefined && data.obj!=null)
                 for(var i=0;i<data.obj.length;i++)
                 {
-                    $("#sltWeb").append("<option value='"+data.obj[i].id+"'>"+data.obj[i].name+"</option>");
+                    $("#sltUsers").append("<option value='"+data.obj[i].id+"'>"+data.obj[i].truename+"</option>");
                 }
             if(type!=0)
                 kb.getMe(getURLParamValue("id"),function (data) {
@@ -108,7 +108,7 @@
                         $("#txtParentID").val("");
                         $("#txtParent").val("");
                     }
-                    $("#users").find("option[value='"+data.web.id+"']").attr("selected","selected");
+                    $("#sltUsers").find("option[value='"+data.users.id+"']").attr("selected","selected");
 
                     layui.use(['form'],function () {
                         var form=layui.form;
@@ -121,7 +121,6 @@
             });
         });
     });
-
 
 
 

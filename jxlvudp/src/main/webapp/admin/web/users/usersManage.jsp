@@ -20,9 +20,9 @@
 </head>
 <body>
 <div class="layui-table-tool" id="tb">
-    <%-- <button class="layui-btn layui-btn-small" id="btnAdd" >
-        <i class="layui-icon">&#xe608;</i> 添加
-    </button>--%>
+  <button class="layui-btn layui-btn-small"  >
+        <i class="layui-icon">&#xe608;</i> 水果先生
+    </button>
     <input type="text"  style="width: 300px; height: 28px;" name="name" id="txtName" required  placeholder="请输入关键词" autocomplete="off"/>
     <div class="layui-btn-group">
         <button class="layui-btn layui-btn-small" id="btnFind">
@@ -41,12 +41,13 @@
     <thead>
     <tr>
         <th data-options="field:'id1',checkbox:true"></th>
-        <th data-options="field:'id',width:60">顾客ID</th>
+        <th data-options="field:'id',width:140">顾客ID</th>
         <th data-options="field:'name',width:100">顾客名称</th>
         <th data-options="field:'truename',width:100">真实姓名</th>
         <th data-options="field:'password',width:100">密码</th>
         <th data-options="field:'discount',width:80">折扣</th>
         <th data-options="field:'integral',width:80">积分</th>
+        <th data-options="field:'tell',width:80">电话</th>
         <th data-options="field:'ids',formatter:jxmstc.formateOperateForEasyui" width="120"
             align="center">操作</th>
     </tr>

@@ -39,7 +39,7 @@
     <thead>
     <tr>
         <th data-options="field:'id1',checkbox:true"></th>
-        <th data-options="field:'id',width:80">库存编号</th>
+        <th data-options="field:'id',width:180">库存编号</th>
         <th data-options="field:'name',width:80">库存名称</th>
         <th data-options="field:'webName',width:80">产品名称</th>
         <th data-options="field:'count',width:100">产品数量</th>

@@ -10,6 +10,7 @@ public class Users extends AbsBusinessObject {
     private String name;
     private String truename;
     private String password;
+    private String tell;
     private int discount;
     private int integral;
 
@@ -64,5 +65,13 @@ public class Users extends AbsBusinessObject {
 
     public void setIntegral(int integral) {
         this.integral = integral;
+    }
+
+    public String getTell() {
+        return tell;
+    }
+
+    public void setTell(String tell) {
+        this.tell = tell;
     }
 }

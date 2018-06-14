@@ -19,12 +19,12 @@
 <body style="padding-top: 10px">
 <form class="layui-form" id="ff">
     <input type="hidden" name="oldId"/>
-   <div class="layui-form-item">
+   <%--<div class="layui-form-item">
         <label class="layui-form-label">产品编号：</label>
         <div class="layui-input-block">
             <input id="id" name="id" required style="width:500px;"  lay-verify="required" autocomplete="off" placeholder="请输入产品的编号" class="layui-input" type="text" >
         </div>
-    </div>
+    </div>--%>
     <div class="layui-form-item">
         <label class="layui-form-label">产品名称：</label>
         <div class="layui-input-block">

@@ -42,6 +42,7 @@ public class StockController extends SuperController{
         {
             values.put("id", JSONAndObject.GetJsonStringValue(param,"condition"));
             values.put("name",JSONAndObject.GetJsonStringValue(param,"condition"));
+            values.put("webName",JSONAndObject.GetJsonStringValue(param,"condition"));
         }
         return values;
     }

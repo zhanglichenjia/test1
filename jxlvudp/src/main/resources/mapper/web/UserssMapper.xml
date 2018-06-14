@@ -8,14 +8,15 @@
         <result column="password" property="password" />
         <result column="discount" property="discount" />
         <result column="integral" property="integral" />
+        <result column="tell" property="tell" />
 
 
     </resultMap>
     <insert id="insert" parameterType="kesun.entity.web.Users">
        insert into user (id, name, truename,password,
-      discount, integral)
+      discount, integral,tell)
     values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{truename,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
-      #{discount,jdbcType=INTEGER},#{integral,jdbcType=INTEGER})
+      #{discount,jdbcType=INTEGER},#{integral,jdbcType=INTEGER},#{tell,jdbcType=INTEGER})
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="kesun.entity.web.Users">
@@ -24,7 +25,8 @@
     truename = #{truename,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       discount = #{discount,jdbcType=INTEGER},
-      integral = #{integral,jdbcType=INTEGER}
+      integral = #{integral,jdbcType=INTEGER},
+       tell = #{tell,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
     </update>
 

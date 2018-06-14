@@ -58,6 +58,12 @@
             <input name="integral" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入积分" class="layui-input" type="text">
         </div>
     </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">电话：</label>
+        <div class="layui-input-block">
+            <input name="tell" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入电话" class="layui-input" type="text">
+        </div>
+    </div>
 
     <div class="layui-form-item">
         <label class="layui-form-label">状态:</label>

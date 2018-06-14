@@ -41,7 +41,7 @@
     <div class="layui-form-item">
     <label class="layui-form-label">产品数量：</label>
     <div class="layui-input-block"style="width:500px;">
-        <input name="count" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入产品数量" class="layui-input" type="text">
+        <input name="count" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入产品数量(以千克为单位)" class="layui-input" type="text">
     </div>
 </div>
     <div class="layui-form-item">

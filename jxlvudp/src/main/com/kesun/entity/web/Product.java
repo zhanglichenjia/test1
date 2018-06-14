@@ -15,6 +15,7 @@ public class Product extends AbsBusinessObject {
     private String description;
 
     private String bid;
+    private String picture;
 
     private  Business bus = null;
 
@@ -60,5 +61,13 @@ public class Product extends AbsBusinessObject {
 
     public void setBid(String bid) {
         this.bid = bid;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

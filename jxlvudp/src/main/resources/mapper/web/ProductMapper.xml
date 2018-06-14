@@ -6,6 +6,7 @@
         <result column="name" property="name" />
         <result column="price" property="price"/>
         <result column="description" property="description" />
+        <result column="picture" property="picture" />
 
         <association property="bus" javaType="kesun.entity.web.Business">
             <id column="bid"  property="id" />
@@ -15,20 +16,20 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, name, price,description,bid,webName,address
+        id, name, price,description,bid,webName,address,picture
     </sql>
 
     <insert id="insert" parameterType="kesun.entity.web.Product">
         insert into product (id, name, price,
-        bid, description)
+        bid, description,picture)
         values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{price,jdbcType=FLOAT},
-        #{bus.id,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR})
+        #{bus.id,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR})
     </insert>
 
     <update id="updateByPrimaryKey" parameterType="kesun.entity.web.Product">
        update product set
       id=#{id,jdbcType=VARCHAR},name=#{name,jdbcType=VARCHAR},price=#{price,jdbcType=FLOAT},
-        bid=#{bus.id,jdbcType=VARCHAR},description=#{description,jdbcType=VARCHAR}
+        bid=#{bus.id,jdbcType=VARCHAR},description=#{description,jdbcType=VARCHAR},picture=#{picture,jdbcType=VARCHAR}
       where id=#{id,jdbcType=VARCHAR}
 
     </update>

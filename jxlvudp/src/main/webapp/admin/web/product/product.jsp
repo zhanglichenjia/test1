@@ -19,7 +19,7 @@
 <body style="padding-top: 10px">
 <form class="layui-form" id="ff">
     <input type="hidden" name="oldId"/>
-    <div class="layui-form-item">
+   <div class="layui-form-item">
         <label class="layui-form-label">产品编号：</label>
         <div class="layui-input-block">
             <input id="id" name="id" required style="width:500px;"  lay-verify="required" autocomplete="off" placeholder="请输入产品的编号" class="layui-input" type="text" >
@@ -37,6 +37,12 @@
         <input name="price" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入产品价格" class="layui-input" type="text">
     </div>
 </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">产品图片：</label>
+        <div class="layui-input-block"style="width:500px;">
+            <input name="picture" required style="width:500px;" lay-verify="required" autocomplete="off" placeholder="请输入产品图片" class="layui-input" type="file">
+        </div>
+    </div>
 
     <div class="layui-form-item">
         <label class="layui-form-label">产品描述：</label>
